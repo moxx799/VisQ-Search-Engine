@@ -38,9 +38,9 @@ Below is a sample of how to run the code.<br>
 --OUTPUT_DIR=/project/roysam/rwmills/repos/cluster-contrast-reid/examples/data/MDA_GBM_1168457_whole.2/ \
 --BBXS_FILE=/project/roysam/rwmills/data/brain/MDA_GBM/1168457/detection_results/bbxs_detection.txt \
 --DAPI=R1C1.tif \
---HISTONES=R1C2.tif \                                                                                                  
+--HISTONES=R1C2.tif \
 --NEUN=R1C3.tif \
---S100=R1C4.tif \                                                                                                      
+--S100=R1C4.tif \
 --OLIG2=R1C5.tif \
 --IBA1=R1C6.tif \
 --RECA1=R2C2.tif \
