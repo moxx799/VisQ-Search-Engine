@@ -1,4 +1,3 @@
-
 A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 
 # Paper
@@ -75,7 +74,7 @@ Run the code in BooleanUser_lhuang.ipynb to see how to interact with your query 
 
 ...More Details...
 
-## Acknowledgements
+## Acknowledgments
 
 * Will update later
 
