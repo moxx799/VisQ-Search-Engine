@@ -1,4 +1,3 @@
-# VisQ-Search-Engine
 
 A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 
@@ -14,7 +13,7 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 
 ### Installation
 
-You can use `python setup.py develop` to install the environment directly, or mannually install the following packages.
+You can use `python setup.py develop` to install the environment directly, or manually install the following packages.
 requirement pkgs=[
     'numpy', 'torch=2.3.0', 'torchvision',
     'six', 'h5py', 'Pillow', 'scipy',
@@ -23,22 +22,22 @@ requirement pkgs=[
 * `cd ClusterContrast`
 * `pip install -e .`
 
-### Data preparation
+### Data Preparation
 
 You need to train the whole dataset before using the query search engine, after it has been trained, the user can use the list of the locations as the query engine input.  Here is the method for preparing the dataset:`<br>`
 `python make_blindDS_maui.py<br>`
 `--INPUT_DIR <Path to the input dir containing biomarker images><br>`
 `--OUTPUT_DIR <Path to the output dir><br>`
-`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detectio module><br>`
+`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module><br>`
 `--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]><br>`
 
 Alternatively, there are several default variables that you can change by your need, please check the code in the file.
-The input biomarker images are the whole brain images and the ouput are the cropped [175,172,10] patches.
+The input biomarker images are the whole brain images and the output are the cropped [175,172,10] patches.
 Below is a sample of how to run the code.`<br>`
 `python make_blindDS_maui.py \ --INPUT_DIR=/project/roysam/rwmills/data/brain/MDA_GBM/1168457/intra_corrected/ \ --OUTPUT_DIR=/project/roysam/rwmills/repos/cluster-contrast-reid/examples/data/MDA_GBM_1168457_whole.2/ \ --BBXS_FILE=/project/roysam/rwmills/data/brain/MDA_GBM/1168457/detection_results/bbxs_detection.txt \ --DAPI=R1C1.tif \ --HISTONES=R1C2.tif \ --NEUN=R1C3.tif \ --S100=R1C4.tif \ --OLIG2=R1C5.tif \ --IBA1=R1C6.tif \ --RECA1=R2C2.tif \ --other1=R2C3.tif \ --other2=R2C4.tif \ --other3=R2C5.tif \ `
 
 You can see the example of the data in the bbs_detection.txt.
-We recommand you to set the file arc as below:`<br>`
+We recommend you set the file arc as below:`<br>`
 
 `cluster-contrast-reid<br>`
 `├── clustercontrast` `<br>`
@@ -54,7 +53,7 @@ We recommand you to set the file arc as below:`<br>`
 ### Train
 
 To train the network, we need several args, here is the explanation:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4-GPUs, it corresponding the variavle -j, if you are using other nubmer of GPUs, you need to change the variable -j to the number of the Gpus<br>`
+`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus<br>`
 `-b batch size<br>`
 `-a backbone network<br>`
 `--iters number of the epoch<br>`
@@ -68,7 +67,7 @@ One example for training:`<br>`
 
 ### Query
 
-Run the code in BooleanUser_lhuang.ipynb to see how to interact with the machine learning model with your query and the output display. Before that, you need to prepare the following files:
+Run the code in BooleanUser_lhuang.ipynb to see how to interact with your query and the output display with the machine learning model. Before that, you need to prepare the following files:
 
 * pretrained matrix
 * atlas_borders
