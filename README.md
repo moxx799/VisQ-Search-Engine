@@ -38,30 +38,30 @@ Below is a sample of how to run the code.
 You can see the example of the data in the bbs_detection.txt.
 We recommend you set the file arc as below:`<br>`
 
-`cluster-contrast-reid<br>`
-`├── clustercontrast` `<br>`
-`├── exaples` `<br>`
-`│   └──data <br>`
-`│   └──logs <br>`
-`│   └──pretrained <br>`
-`├── results` `<br>`
-`├── runs` `<br>`
-`├── bash.sh` `<br>`
-`├── setup.py` `<br>`
+`cluster-contrast-reid`<br>
+`├── clustercontrast` <br>
+`├── exaples` <br>
+`│   └──data `<br>
+`│   └──logs`<br>
+`│   └──pretrained `<br>
+`├── results` <br>
+`├── runs` <br>
+`├── bash.sh`<br>
+`├── setup.py` <br>
 
 ### Train
 
 To train the network, we need several args, here is the explanation:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus<br>`
-`-b batch size<br>`
-`-a backbone network<br>`
-`--iters number of the epoch<br>`
-`--momentum the momentum of the encoder update rate<br>`
-`-- eps max neighbor distance for DBSCAN<br>`
-`-- k1 hyperparameter for KNN<br>`
-`-- k2 hyperparameter for outline<br>`
+`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus`
+`-b batch size`<br>
+`-a backbone network`<br>
+`--iters number of the epoch`<br>
+`--momentum the momentum of the encoder update rate`<br>
+`-- eps max neighbor distance for DBSCAN`<br>
+`-- k1 hyperparameter for KNN`<br>
+`-- k2 hyperparameter for outline`<br>
 
-One example for training:`<br>`
+One example for training:
 `CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/cluster_contrast_train_usl_infomap.py -b 256 -a resnet50 -d market1501 --iters 200 --momentum 0.1 --eps 0.5 --k1 15 --k2 4 --num-instances 16 --logs-dir /project/roysam/rwmills/repos/cluster-contrast-reid/examples/logs/infomap/ --height 50 --width 50`
 
 ### Query
