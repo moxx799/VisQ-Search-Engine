@@ -1,0 +1,7 @@
+Namespace(BBXS_FILE='/project/roysam/rwmills/data/brain/50Plex/S1/classification_results/regions/regions_table.csv', DAPI='S1_R2C4.tif', HISTONES='S1_R5C9.tif', IBA1='S1_R2C6.tif', INPUT_DIR='/project/roysam/rwmills/data/brain/50Plex/S1/final/', NEUN='S1_R5C5.tif', OLIG2='S1_R1C2.tif', OUTPUT_DIR='/project/roysam/rwmills/repos/cluster-contrast-reid/examples/data/internal1.9_neuronal2', RECA1='S1_R5C3.tif', S100='S1_R5C7.tif', other1='S1_R2C5.tif', other2='S1_R3C5.tif', other3='S1_R4C6.tif') []
+1. Size of cells is:  86578
+1. Size of first entry is:  (174, 174, 10)
+1. Size of second entry is:  (174, 174, 10)
+1. Size of third entry is:  (174, 174, 10)
+/var/spool/slurm/slurmd/job731755/slurm_script: line 26: 197626 Killed                  /project/roysam/rwmills/apps/miniconda3/envs/pytorch_gpu/bin/python makeDS.py --INPUT_DIR=/project/roysam/rwmills/data/brain/50Plex/S1/final/ --OUTPUT_DIR=/project/roysam/rwmills/repos/cluster-contrast-reid/examples/data/internal1.9_neuronal2 --BBXS_FILE=/project/roysam/rwmills/data/brain/50Plex/S1/classification_results/regions/regions_table.csv --DAPI=S1_R2C4.tif --HISTONES=S1_R5C9.tif --NEUN=S1_R5C5.tif --S100=S1_R5C7.tif --OLIG2=S1_R1C2.tif --IBA1=S1_R2C6.tif --RECA1=S1_R5C3.tif --other1=S1_R2C5.tif --other2=S1_R3C5.tif --other3=S1_R4C6.tif
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=731755.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

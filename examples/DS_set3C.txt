@@ -1,0 +1,16 @@
+Namespace(BBXS_FILE='/project/roysam/rwmills/data/brain/50Plex/S1/classification_results/regions/regions_table.csv', DAPI='S1_R1C9.tif', HISTONES='S1_R3C5.tif', IBA1='S1_R5C5.tif', INPUT_DIR='/project/roysam/rwmills/data/brain/50Plex/S1/final/', NEUN='S1_R1C5.tif', OLIG2='S1_R5C9.tif', OUTPUT_DIR='/project/roysam/rwmills/repos/cluster-contrast-reid/examples/data/internal1.10_cortexCell', RECA1='S1_R5C7.tif', S100='S1_R2C4.tif', other1='S1_R3C9.tif', other2='S1_R5C4.tif', other3='S1_R5C6.tif') []
+1. Size of cells is:  63396
+1. Size of first entry is:  (124, 124, 10)
+1. Size of second entry is:  (124, 124, 10)
+1. Size of third entry is:  (124, 124, 10)
+1. Size of cells is:  63396
+We finished with the whole set, size of new_new_cells is:  63396
+1. Size of cells is:  63396
+mean:  tensor([0.2357, 0.3609, 0.4808, 0.4802, 0.4821, 0.4795, 0.4771, 0.3932, 0.3418,
+        0.4788])
+std:  tensor([0.2984, 0.3172, 0.2950, 0.2952, 0.2971, 0.2983, 0.2983, 0.3239, 0.3241,
+        0.2981])
+**************************************************
+**************************************************
+Data prepared for training in 0 hours, 15 minutes and 53 seconds.
+Data saved in /project/roysam/rwmills/repos/cluster-contrast-reid/examples/data/internal1.10_cortexCell
