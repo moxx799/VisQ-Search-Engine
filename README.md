@@ -89,7 +89,7 @@ Calculate thresholding:
 <... update later>
 
 Visualization:
-
+![image info](examples/showcase/output11.png)
 
 ## Acknowledgments
 
