@@ -29,7 +29,7 @@ You need to train the whole dataset before using the query search engine, after 
 
 The data preparation is to crop the whole image into several [174,174,10] images.
 
-![image info](examples/showcase/preparation.png)
+![image info](VisQ-Search-Engine/examples/showcase/preparation.png)
 
 Here is the method for preparing the dataset:
 `python make_blindDS_maui.py<br>`
