@@ -14,21 +14,29 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 
 You can use `python setup.py develop` to install the environment directly, or manually install the following packages.
 requirement pkgs=[
-    'numpy', 'torch=2.3.0', 'torchvision',
-    'six', 'h5py', 'Pillow', 'scipy',
-    'scikit-learn', 'metric-learn', 'faiss_gpu']
+    'torch=2.3.0','numpy=1.26.4',  'torchvision=0.18.0',
+    'six=1.16.0', 'h5py=3.11.0', 'Pillow=9.4.0', 'scipy=1.21.0',
+    'scikit-learn=1.4.2', 'metric-learn=0.6.2', 'faiss_gpu=1.7.2']
+
+and then install itself as a package.
 
 * `cd ClusterContrast`
 * `pip install -e .`
 
 ### Data Preparation
 
-You need to train the whole dataset before using the query search engine, after it has been trained, the user can use the list of the locations as the query engine input.  Here is the method for preparing the dataset:
-`python make_blindDS_maui.py`<br>
-`--INPUT_DIR <Path to the input dir containing biomarker images>`<br>
-`--OUTPUT_DIR <Path to the output dir>`<br>
-`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`<br>
-`--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`<br>
+You need to train the whole dataset before using the query search engine, after it has been trained, the user can use the list of the locations as the query engine input.  
+
+The data preparation is to crop the whole image into several [174,174,10] images.
+
+![image info](./examples/showcase/preparation.png)
+
+Here is the method for preparing the dataset:
+`python make_blindDS_maui.py<br>`
+`--INPUT_DIR <Path to the input dir containing biomarker images><br>`
+`--OUTPUT_DIR <Path to the output dir><br>`
+`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax><br>`
+`--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]><br>`
 
 Alternatively, there are several default variables that you can change by your need, please check the code in the file.
 The input biomarker images are the whole brain images and the output are the cropped [175,172,10] patches.
@@ -38,28 +46,28 @@ Below is a sample of how to run the code.
 You can see the example of the data in the bbs_detection.txt.
 We recommend you set the file arc as below:
 
-`cluster-contrast-reid`<br>
-`├── clustercontrast` <br>
-`├── exaples` <br>
-`│   └──data `<br>
-`│   └──logs`<br>
-`│   └──pretrained `<br>
-`├── results` <br>
-`├── runs` <br>
-`├── bash.sh`<br>
-`├── setup.py` <br>
+`cluster-contrast-reid<br>`
+`├── clustercontrast` `<br>`
+`├── exaples` `<br>`
+`│   └──data <br>`
+`│   └──logs<br>`
+`│   └──pretrained <br>`
+`├── results` `<br>`
+`├── runs` `<br>`
+`├── bash.sh<br>`
+`├── setup.py` `<br>`
 
 ### Train
 
 To train the network, we need several args, here is the explanation:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus`<br>
-`-b batch size`<br>
-`-a backbone network`<br>
-`--iters number of the epoch`<br>
-`--momentum the momentum of the encoder update rate`<br>
-`-- eps max neighbor distance for DBSCAN`<br>
-`-- k1 hyperparameter for KNN`<br>
-`-- k2 hyperparameter for outline`<br>
+`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus<br>`
+`-b batch size<br>`
+`-a backbone network<br>`
+`--iters number of the epoch<br>`
+`--momentum the momentum of the encoder update rate<br>`
+`-- eps max neighbor distance for DBSCAN<br>`
+`-- k1 hyperparameter for KNN<br>`
+`-- k2 hyperparameter for outline<br>`
 
 One example for training:
 `CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/cluster_contrast_train_usl_infomap.py -b 256 -a resnet50 -d market1501 --iters 200 --momentum 0.1 --eps 0.5 --k1 15 --k2 4 --num-instances 16 --logs-dir /project/roysam/rwmills/repos/cluster-contrast-reid/examples/logs/infomap/ --height 50 --width 50`
