@@ -25,11 +25,11 @@ and then install itself as a package.
 
 ### Data Preparation
 
-You need to train the whole dataset before using the query search engine, after it has been trained, the user can use the list of the locations as the query engine input.  
+You need to train the whole dataset before using the query search engine, after it has been trained, the user can use the list of the locations as the query engine input.
 
 The data preparation is to crop the whole image into several [174,174,10] images.
 
-![image info](examples/showcase/preparetion.png)
+![image info](examples/showcase/preparation.png)
 
 Here is the method for preparing the dataset:
 `python make_blindDS_maui.py<br>`
