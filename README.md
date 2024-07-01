@@ -76,11 +76,20 @@ One example for training:
 
 Run the code in BooleanUser_lhuang.ipynb to see how to interact with your query and the output display with the machine learning model. Before that, you need to prepare the following files:
 
-* pretrained matrix
-* atlas_borders
-* Target whole brain image
+* pretrained matrix: please find it in examples/logs/<data name, ex:UNet_CA_myelo >/feature_results.h5
+* distance rerank: please find it in examples/logs/<data name, ex:UNet_CA_myelo >/rerankingDist.npy
+* cosine feature: please find it in examples/logs/<data name, ex:UNet_CA_myelo >/feature_results_Cosine.h5
+* h5file: please find it in data/Select_RegionMasked_50.h5
+* prepared data crops from target whole brain image, include the mean_std.txt
+* Atlas data: please find it in data/Swanson_S1_Atlas_Fit_1.tif
+* click keys: please find it in brain/50Plex/S1/classification_table_master.csv
+* clicks(Alternatively, can manually selected, or save as a npy file) please find it in /examples/data/clicks/clicks_Swanson0.npy
 
-...More Details...
+Calculate thresholding:
+<... update later>
+
+Visualization:
+
 
 ## Acknowledgments
 
