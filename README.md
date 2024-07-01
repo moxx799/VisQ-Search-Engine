@@ -47,14 +47,23 @@ You can see the example of the data in the bbs_detection.txt.
 We recommend you set the file arc as below:
 
 `cluster-contrast-reid`
+
 `├── clustercontrast` 
+
 `├── exaples` 
+
 `│   └──data `
+
 `│   └──logs`
+
 `│   └──pretrained `
+
 `├── results` 
+
 `├── runs` 
+
 `├── bash.sh`
+
 `├── setup.py`
 
 ### Train
