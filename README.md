@@ -91,6 +91,7 @@ Calculate thresholding:
 Visualization:
 The red node is the search engine and the output is the similarity hotmap of the whole brain image. 
 <img src="examples/showcase/output11.png" width="400">
+
 Please see more examples with multi-clicks in the jupyter notebook file.
 ## Acknowledgments
 
