@@ -70,7 +70,7 @@ To train the network, we need several args, here is the explanation:
 `-- k2 hyperparameter for outline<br>`
 
 One example for training:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/cluster_contrast_train_usl_infomap.py -b 256 -a resnet50 -d market1501 --iters 200 --momentum 0.1 --eps 0.5 --k1 15 --k2 4 --num-instances 16 --logs-dir /project/roysam/rwmills/repos/cluster-contrast-reid/examples/logs/infomap/ --height 50 --width 50`
+`CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/cluster_contrast_train_usl_infomap.py -b 256 -a resnet50 -d market1501 --iters 200 --momentum 0.1 --eps 0.5 --k1 15 --k2 4 --num-instances 16 --logs-dir examples/logs/infomap/ --height 50 --width 50`
 
 ### Query
 
