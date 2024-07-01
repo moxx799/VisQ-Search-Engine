@@ -27,7 +27,7 @@ You need to train the whole dataset before using the query search engine, after 
 `python make_blindDS_maui.py`<br>
 `--INPUT_DIR <Path to the input dir containing biomarker images>`<br>
 `--OUTPUT_DIR <Path to the output dir>`<br>
-`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module>`<br>
+`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`<br>
 `--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`<br>
 
 Alternatively, there are several default variables that you can change by your need, please check the code in the file.
