@@ -32,11 +32,11 @@ The data preparation is to crop the whole image into several [174,174,10] images
 ![image info](examples/showcase/preparation.png)
 
 Here is the method for preparing the dataset:
-`python make_blindDS_maui.py<br>`
-`--INPUT_DIR <Path to the input dir containing biomarker images><br>`
-`--OUTPUT_DIR <Path to the output dir><br>`
-`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax><br>`
-`--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]><br>`
+`python make_blindDS_maui.py`
+`--INPUT_DIR <Path to the input dir containing biomarker images>`
+`--OUTPUT_DIR <Path to the output dir>`
+`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`
+`--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`
 
 Alternatively, there are several default variables that you can change by your need, please check the code in the file.
 The input biomarker images are the whole brain images and the output are the cropped [175,172,10] patches.
@@ -69,14 +69,14 @@ We recommend you set the file arc as below:
 ### Train
 
 To train the network, we need several args, here is the explanation:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus<br>`
-`-b batch size<br>`
-`-a backbone network<br>`
-`--iters number of the epoch<br>`
-`--momentum the momentum of the encoder update rate<br>`
-`-- eps max neighbor distance for DBSCAN<br>`
-`-- k1 hyperparameter for KNN<br>`
-`-- k2 hyperparameter for outline<br>`
+`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus`
+`-b batch size`
+`-a backbone network`
+`--iters number of the epoch`
+`--momentum the momentum of the encoder update rate`
+`-- eps max neighbor distance for DBSCAN`
+`-- k1 hyperparameter for KNN`
+`-- k2 hyperparameter for outline`
 
 One example for training:
 `CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/cluster_contrast_train_usl_infomap.py -b 256 -a resnet50 -d market1501 --iters 200 --momentum 0.1 --eps 0.5 --k1 15 --k2 4 --num-instances 16 --logs-dir examples/logs/infomap/ --height 50 --width 50`
