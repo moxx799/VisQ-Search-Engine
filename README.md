@@ -15,8 +15,8 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 You can use `python setup.py develop` to install the environment directly, or manually install the following packages.
 requirement pkgs=[
     'torch=2.3.0','numpy=1.26.4',  'torchvision=0.18.0',
-    'six=1.16.0', 'h5py=3.11.0', 'Pillow=9.4.0', 'scipy=1.21.0',
-    'scikit-learn=1.4.2', 'metric-learn=0.6.2', 'faiss_gpu=1.7.2','infomap=2.8.0']
+    'six=1.16.0', 'h5py=3.11.0', 'Pillow=9.4.0', 'scipy=1.12.0',
+    'scikit-learn=1.4.2', 'metric-learn=0.6.2',<pip only> 'faiss_gpu=1.7.2','infomap=2.8.0']
 
 and then install itself as a package.
 
