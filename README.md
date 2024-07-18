@@ -20,7 +20,7 @@ requirement pkgs=[
 
 and then install itself as a package.
 
-* `cd cluster-contrast-reid/`
+* `cd VisQ-Search-Engine `
 * `pip install -e .`
 
 ### Data Preparation
