@@ -20,7 +20,7 @@ requirement pkgs=[
 
 and then install itself as a package.
 
-* `cd ClusterContrast`
+* `cd cluster-contrast-reid/`
 * `pip install -e .`
 
 ### Data Preparation
