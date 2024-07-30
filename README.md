@@ -75,11 +75,13 @@ To train the network, we need several args, here is the explanation:
 `--iters number of the epoch`
 `--momentum the momentum of the encoder update rate`
 `-- eps max neighbor distance for DBSCAN`
-`-- k1 hyperparameter for KNN`
-`-- k2 hyperparameter for outline`
+
 
 One example for training:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/cluster_contrast_train_usl_infomap.py -b 256 -a resnet50 -d market1501 --iters 200 --momentum 0.1 --eps 0.5 --k1 15 --k2 4 --num-instances 16 --logs-dir examples/logs/infomap/ --height 50 --width 50`
+`python VisQ-Search-Engine/examples/triplet_loss_train.py\
+  -b 100 -a unet -d brain -dn connectivity0_noRECA_NeuN -nc=5\
+  --iters 200 --momentum 0.2 --eps 0.6 --num-instances 16 --height 50 --width 50 --epochs 100 \
+  --logs-dir VisQ-Search-Engine/examples/logs/unetg1b1m2_ftTL_myelo22_175/ `
 
 ### Query
 
