@@ -33,13 +33,9 @@ The data preparation is to crop the whole image into several [174,174,10] images
 
 Here is the method for preparing the dataset:
 `python make_blindDS_maui.py`
-
 `--INPUT_DIR <Path to the input dir containing biomarker images>`
-
 `--OUTPUT_DIR <Path to the output dir>`
-
 `--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`
-
 `--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`
 
 Alternatively, there are several default variables that you can change by your need, please check the code in the file.
@@ -74,12 +70,14 @@ We recommend you set the file arc as below:
 
 To train the network, we need several args, here is the explanation:
 `CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus`
-`-b batch size`
-`-a backbone network`
-`--iters number of the epoch`
-`--momentum the momentum of the encoder update rate`
-`-- eps max neighbor distance for DBSCAN`
 
+`-b batch size`
+
+`-a backbone network`
+
+`--iters number of the epoch`
+
+`--momentum the momentum of the encoder update rate`
 
 One example for training:
 `python VisQ-Search-Engine/examples/triplet_loss_train.py\
