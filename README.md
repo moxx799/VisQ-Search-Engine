@@ -105,7 +105,8 @@ The red node is the search engine and the output is the similarity heatmap of th
 Please see more examples with multi-clicks in the jupyter notebook file.
 ## Acknowledgments
 
-* Will update later
+This work was supported by the National Institutes of health (NINDS) under grant
+R01NS109118
 
 ## License
 
