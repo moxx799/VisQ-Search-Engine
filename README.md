@@ -33,15 +33,19 @@ The data preparation is to crop the whole image into several [174,174,10] images
 
 Here is the method for preparing the dataset:
 `python make_blindDS_maui.py`
+
 `--INPUT_DIR <Path to the input dir containing biomarker images>`
+
 `--OUTPUT_DIR <Path to the output dir>`
+
 `--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`
+
 `--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`
 
 Alternatively, there are several default variables that you can change by your need, please check the code in the file.
 The input biomarker images are the whole brain images and the output are the cropped [175,172,10] patches.
 Below is a sample of how to run the code.
-`python make_blindDS_maui.py \ --INPUT_DIR=/data/brain/MDA_GBM/1168457/intra_corrected/ \ --OUTPUT_DIR=/examples/data/MDA_GBM_1168457_whole.2/ \ --BBXS_FILE=/data/brain/MDA_GBM/1168457/detection_results/bbxs_detection.txt \ --DAPI=R1C1.tif \ --HISTONES=R1C2.tif \ --NEUN=R1C3.tif \ --S100=R1C4.tif \ --OLIG2=R1C5.tif \ --IBA1=R1C6.tif \ --RECA1=R2C2.tif \ --other1=R2C3.tif \ --other2=R2C4.tif \ --other3=R2C5.tif \ `
+`python make_blindDS_maui.py  --INPUT_DIR=/data/brain/MDA_GBM/1168457/intra_corrected/  --OUTPUT_DIR=/examples/data/MDA_GBM_1168457_whole.2/  --BBXS_FILE=/data/brain/MDA_GBM/1168457/detection_results/bbxs_detection.txt  --DAPI=R1C1.tif --HISTONES=R1C2.tif  --NEUN=R1C3.tif  --S100=R1C4.tif  --OLIG2=R1C5.tif  --IBA1=R1C6.tif  --RECA1=R2C2.tif  --other1=R2C3.tif  --other2=R2C4.tif  --other3=R2C5.tif  `
 
 You can see the example of the data in the bbs_detection.txt.
 We recommend you set the file arc as below:
