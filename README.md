@@ -13,6 +13,7 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 ### Installation
 
 You can use `python setup.py develop` to install the environment directly, or manually install the following packages.
+for pytorch,use`conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia`
 requirement pkgs=[
     'torch=2.3.0','numpy=1.26.4',  'torchvision=0.18.0',
     'six=1.16.0', 'h5py=3.11.0', 'Pillow=9.4.0', 'scipy=1.12.0','timm=1.0.11',
