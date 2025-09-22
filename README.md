@@ -13,7 +13,7 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 ### Installation
 
 Please manually install the following packages.
-Note that the cuda driver should be 12.1, and pytorch should be 2.3.0.
+Note that the cuda driver version should be 12.1, and pytorch should be 2.3.0.
 for pytorch,use`conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia`
 requirement pkgs=[
     'torch=2.3.0','numpy=1.26.4',  'torchvision=0.18.0',
