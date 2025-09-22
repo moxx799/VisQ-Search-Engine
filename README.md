@@ -35,13 +35,14 @@ The data preparation is to crop the entire image into several [174,174,n] patche
 ![image info](examples/showcase/preparation.png)
 
 Here is the method for preparing the dataset:
-`python make_blindDS_maui.py`
-`--INPUT_DIR <Path to the input dir containing biomarker images>`
-`--OUTPUT_DIR <Path to the output dir>`
-`--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`
-`--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`
 
-Alternatively, there are several default variables that you can change as needed, please check the code in the file.
+`python examples/makeDS.py \
+ --INPUT_DIR <folder path contains single channel images> \
+ --OUTPUT_DIR <> \
+ --BBXS_FILE  <csv file of cell detection, should contain centriod_x, centroid_y, x_min,x_max,y_min,y_max> \
+ --BIO_MARKERS_PANNEL <tag for the panel name, which is the key of the dict in examples/channel_lists>`
+
+Alternatively, there are several default variables that you can change as needed. Please check the code in the file.
 The input biomarker images are the entire brain images, and the output is the cropped [175,172,10] patches.
 We recommend you set the file arc as below:
 
@@ -68,13 +69,13 @@ We recommend you set the file arc as below:
 ### Train
 
 To train the network, we need several args. Here is the explanation:
-
 `-b: batch size`
 `-a: backbone network`
 `-dn: dataset folder name` 
 `-nc: number of the channels` 
 Other parameters are better to keep the same, but change them as needed.
 One example for training:
+
 `python VisQ-Search-Engine/examples/graph_train.py\
   -b 256 -a unet -d brain -dn <dataset folder name> -nc=5\
   --iters 200 --momentum 0.2 --eps 0.6 --num-instances 16 --height 50 --width 50 --epochs 50 \
