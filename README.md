@@ -109,7 +109,7 @@ The details and the .jar file can be found
 
 [GitHub - saikiran888/Cell_Search_Engine](https://github.com/saikiran888/Cell_Search_Engine)
 
-![Alt text](github.com/moxx799/VisQ-Search-Engine/tree/main/examples/showcase/figure1.jpg)
+![Alt text](examples/showcase/figure1.jpg)
 
 ## Acknowledgments
 
