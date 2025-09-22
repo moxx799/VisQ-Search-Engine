@@ -109,7 +109,7 @@ The details and the .jar file can be found
 
 [GitHub - saikiran888/Cell_Search_Engine](https://github.com/saikiran888/Cell_Search_Engine)
 
-![Alt text](examples/showcase/figure1.pdf)
+![Qupath GUI](examples/showcase/figure1.jpg)
 
 ## Acknowledgments
 
