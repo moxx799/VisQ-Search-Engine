@@ -108,6 +108,7 @@ Reopen the QuPath and you will see Extension --> Cell Search Engine.
 The details and the .jar file can be found 
 [GitHub - saikiran888/Cell_Search_Engine](https://github.com/saikiran888/Cell_Search_Engine)
 
+
 ## Acknowledgments
 
 This work was supported by the National Institutes of health (NINDS) under grant
