@@ -6,7 +6,6 @@ import numpy as np
 import torch
 import random
 import copy
-
 from .evaluation_metrics import cmc, mean_ap
 from .utils.meters import AverageMeter
 from .utils.rerank import re_ranking
@@ -15,34 +14,35 @@ from .utils import to_torch
 
 def extract_cnn_feature(model, inputs):
     inputs = to_torch(inputs).cuda()
+
     try: 
         outputs = model(inputs.float())
         outputs = outputs.data.cpu()
     except: 
-        outputs, attention = model(inputs.float())
-        outputs, attention = outputs.data.cpu(), attention.data.cpu()
+        outputs, _ = model(inputs.float())
+        outputs = outputs.data.cpu()
     return outputs
 
 
-def extract_features(model, data_loader, print_freq=50):
+def extract_features(model, data_loader, print_freq=50,features_only=False):
+    model = model.cuda()
     model.eval()
     batch_time = AverageMeter()
     data_time = AverageMeter()
 
     features = OrderedDict()
     labels = OrderedDict()
-
+    
     end = time.time()
     with torch.no_grad():
         for i, (imgs, fnames, pids, _, _) in enumerate(data_loader):
             data_time.update(time.time() - end)
-
             outputs = extract_cnn_feature(model, imgs)
-            # print(i)
             for fname, output, pid in zip(fnames, outputs, pids):
                 features[fname] = output
-                labels[fname] = pid
-
+                if not features_only:
+                    labels[fname] = pid
+           
             batch_time.update(time.time() - end)
             end = time.time()
 
@@ -53,6 +53,7 @@ def extract_features(model, data_loader, print_freq=50):
                       .format(i + 1, len(data_loader),
                               batch_time.val, batch_time.avg,
                               data_time.val, data_time.avg))
+            
 
     return features, labels
 

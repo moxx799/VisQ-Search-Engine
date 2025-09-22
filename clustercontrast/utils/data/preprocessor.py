@@ -27,20 +27,21 @@ class Preprocessor(Dataset):
         fpath = fname
         if self.root is not None:
             fpath = osp.join(self.root, fname)
-        try: 
-            #img = Image.open(fpath).convert('RGB')
-            img = imread(fpath) #RWM read in multi channel image
-        except: 
-            #img = imread(fpath) #RWM read in multi channel image
-            img = np.load(fpath) #for Lins stuff 
-            # img = Image.fromarray(imgnp, mode="CMYK") #convert to PIL 
+        img = imread(fpath)
+        # try: 
+        #     #img = Image.open(fpath).convert('RGB')
+        #     img = imread(fpath) #RWM read in multi channel image
+        # except: 
+        #     #img = imread(fpath) #RWM read in multi channel image
+        #     img = np.load(fpath) #for Lins stuff 
+        #     # img = Image.fromarray(imgnp, mode="CMYK") #convert to PIL 
 
         if self.transform is not None:
             # print(img.shape, type(img)) 
             #try: 
-            if img.dtype == 'uint16': 
-                #make the type change for S2 and S3 
-                img = img.astype('float64') 
+            # if img.dtype == 'uint16': 
+            #     #make the type change for S2 and S3 
+            #     img = img.astype('float64') 
 
             img = self.transform(img)
             #except: 

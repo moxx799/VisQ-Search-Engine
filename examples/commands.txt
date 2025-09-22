@@ -1,1 +1,0 @@
-python train.py --config_file configs/market1501/vit_base.yml MODEL.DEVICE_ID "('0')"

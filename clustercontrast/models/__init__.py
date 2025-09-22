@@ -10,6 +10,11 @@ from .hexception import *
 from .sam import * 
 from .unet2 import * #change between unet versions 
 from .ViT import *
+from .draft import *
+from .moe import *
+# from .beitv3dp import *
+from .beitv3my import *
+# from .beitv3gpt import *
 
 __factory = {
     'resnet18': resnet18,
@@ -26,6 +31,12 @@ __factory = {
     'sam':sam, #RWM
     'unet':unet,
     'vit':vit, 
+    'vit_base': vitbase,
+    'moe': moe,
+    # 'beitv3dp': beit_encoder,
+    'beitv3my': beit_encoder,
+    # 'beitv3gpt': beit_encoder,
+    
 }
 
 
