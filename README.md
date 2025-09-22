@@ -12,12 +12,14 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 
 ### Installation
 
-You can use `python setup.py develop` to install the environment directly, or manually install the following packages.
+Please manually install the following packages.
+Note that the cuda driver should be 12.1, and pytorch should be 2.3.0.
 for pytorch,use`conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia`
 requirement pkgs=[
     'torch=2.3.0','numpy=1.26.4',  'torchvision=0.18.0',
     'six=1.16.0', 'h5py=3.11.0', 'Pillow=9.4.0', 'scipy=1.12.0','timm=1.0.11',
-    'scikit-learn=1.4.2', 'metric-learn=0.6.2',--pip only--, 'faiss-gpu-cu12','infomap=2.8.0', 'scikit-image=0.22.0','tqdm=4.66.4',einops==0.8.0]
+    'scikit-learn=1.4.2', 'metric-learn=0.6.2']
+    and --pip only--, ['faiss-gpu-cu12','infomap=2.8.0', 'scikit-image=0.22.0','tqdm=4.66.4',einops==0.8.0]
 
 and then install itself as a package.
 
