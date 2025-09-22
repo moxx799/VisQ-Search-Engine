@@ -6,14 +6,14 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
 
 ## Project description
 
-- will update later...
+- Our search engine is built for combining multiplex fluorescence image signals into a single feature space, which then constructs a community map to delineate the similar/different regions in the tissue.
 
 ## How to use
 
 ### Installation
 
 Please manually install the following packages.
-Note that the cuda driver version should be 12.1, and pytorch should be 2.3.0.
+Note that the CUDA driver version should be 12.1, and PyTorch should be 2.3.0.
 for pytorch,use`conda install pytorch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 pytorch-cuda=12.1 -c pytorch -c nvidia`
 requirement pkgs=[
     'torch=2.3.0','numpy=1.26.4',  'torchvision=0.18.0',
@@ -28,9 +28,9 @@ and then install the repository as a package.
 
 ### Data Preparation
 
-You need to train the whole dataset before using the query search engine, after it has been trained, the user can use the list of the locations as the query engine input. 
-Thus, we provide the mathod for data preparation so the train process can work on it.
-The data preparation is to crop the whole image into several [174,174,10] images.
+You need to train the entire dataset before using the query search engine. After training, the user can upload the output to QuPath and interactively explore the search engine.
+Thus, we provide the method for data preparation so that the training process can work on it.
+The data preparation is to crop the entire image into several [174,174,n] patches.
 
 ![image info](examples/showcase/preparation.png)
 
@@ -41,19 +41,15 @@ Here is the method for preparing the dataset:
 `--BBXS_FILE <Path to the bbxs_detection.txt file generated from cell nuclei detection module, a file that contains the centroidx,centroidy,xmin/ymin and xmax/ymax>`
 `--channel_names <List of filnames for channels in the order: [dapi, histone, neun, s100, olig2, iba1, reca1]>`
 
-Alternatively, there are several default variables that you can change by your need, please check the code in the file.
-The input biomarker images are the whole brain images and the output are the cropped [175,172,10] patches.
-Below is a sample of how to run the code.
-`python make_blindDS_maui.py  --INPUT_DIR=/data/brain/MDA_GBM/1168457/intra_corrected/  --OUTPUT_DIR=/examples/data/MDA_GBM_1168457_whole.2/  --BBXS_FILE=/data/brain/MDA_GBM/1168457/detection_results/bbxs_detection.txt  --DAPI=R1C1.tif --HISTONES=R1C2.tif  --NEUN=R1C3.tif  --S100=R1C4.tif  --OLIG2=R1C5.tif  --IBA1=R1C6.tif  --RECA1=R2C2.tif  --other1=R2C3.tif  --other2=R2C4.tif  --other3=R2C5.tif  `
-
-You can see the example of the data in the bbs_detection.txt.
+Alternatively, there are several default variables that you can change as needed, please check the code in the file.
+The input biomarker images are the entire brain images, and the output is the cropped [175,172,10] patches.
 We recommend you set the file arc as below:
 
 `cluster-contrast-reid`
 
 `├── clustercontrast` 
 
-`├── exaples` 
+`├── examples` 
 
 `│   └──data `
 
@@ -72,21 +68,18 @@ We recommend you set the file arc as below:
 ### Train
 
 To train the network, we need several args, here is the explanation:
-`CUDA_VISIBLE_DEVICES=0,1,2,3 In default, we train the network in 4 GPUs, corresponding to the variable -j, if you are using another number of GPUs, you need to change the variable -j to the number of the Gpus`
 
-`-b batch size`
+`-b: batch size`
 
-`-a backbone network`
-
-`--iters number of the epoch`
-
-`--momentum the momentum of the encoder update rate`
-
+`-a: backbone network`
+`-dn: dataset folder name` 
+`-nc: number of the channles` 
+other parameters is better to keep the same, and change it as needed
 One example for training:
-`python VisQ-Search-Engine/examples/triplet_loss_train.py\
-  -b 100 -a unet -d brain -dn connectivity0_noRECA_NeuN -nc=5\
-  --iters 200 --momentum 0.2 --eps 0.6 --num-instances 16 --height 50 --width 50 --epochs 100 \
-  --logs-dir VisQ-Search-Engine/examples/logs/unetg1b1m2_ftTL_myelo22_175/ `
+`python VisQ-Search-Engine/examples/graph_train.py\
+  -b 256 -a unet -d brain -dn <folder name> -nc=5\
+  --iters 200 --momentum 0.2 --eps 0.6 --num-instances 16 --height 50 --width 50 --epochs 50 \
+  --logs-dir VisQ-Search-Engine/examples/logs/<log folder name>/ `
 
 ### Query
 
