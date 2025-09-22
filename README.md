@@ -21,7 +21,7 @@ requirement pkgs=[
     'scikit-learn=1.4.2', 'metric-learn=0.6.2']
     and --pip only--, ['faiss-gpu-cu12','infomap=2.8.0', 'scikit-image=0.22.0','tqdm=4.66.4',einops==0.8.0]
 
-and then install itself as a package.
+and then install the repository as a package.
 
 * `cd VisQ-Search-Engine `
 * `pip install -e .`
