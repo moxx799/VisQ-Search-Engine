@@ -95,6 +95,19 @@ One example for training:
   
   `python examples/post_query.py --door <your output filename at previous step>`
 
+### Profiling
+`python examples/profileing.py \
+ --dataset <panel name>\
+ -b <batch size, 4096 or larger> \
+ --outputCSV <ouput file name>\
+ --panel <panel name>`
+
+### QuPath
+Download QuPath 0.5.0, and copy the .jar files into the QuPath extension path. (You can find it in QuPath--> Extensions --> Extension manager --> Open extension directory)
+Reopen the QuPath and you will see Extension --> Cell Search Engine.
+The details and the .jar file can be found 
+[GitHub - saikiran888/Cell_Search_Engine](https://github.com/saikiran888/Cell_Search_Engine)
+
 ## Acknowledgments
 
 This work was supported by the National Institutes of health (NINDS) under grant
