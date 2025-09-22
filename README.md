@@ -106,8 +106,10 @@ One example for training:
 Download QuPath 0.5.0, and copy the .jar files into the QuPath extension path. (You can find it in QuPath--> Extensions --> Extension manager --> Open extension directory)
 Reopen the QuPath and you will see Extension --> Cell Search Engine.
 The details and the .jar file can be found 
+
 [GitHub - saikiran888/Cell_Search_Engine](https://github.com/saikiran888/Cell_Search_Engine)
 
+![Alt text](examples/showcase/figure1.pdf)
 
 ## Acknowledgments
 
