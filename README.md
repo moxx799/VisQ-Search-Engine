@@ -70,7 +70,7 @@ We recommend you set the file arc as below:
 
 To train the network, we need several args. Here is the explanation:
 `-b: batch size`
-`-a: backbone network`
+`-a: backbone network, unet is recommanded to new user, it is more fast and flexible, beitv3my is the paper results, powerful bu not easy`
 `-dn: dataset folder name` 
 `-nc: number of the channels` 
 Other parameters are better to keep the same, but change them as needed.
