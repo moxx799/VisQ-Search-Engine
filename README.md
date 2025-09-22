@@ -86,11 +86,13 @@ One example for training:
   -d brain -a unet --resume <your checkpoint(log) path/model_best.pth.tar> \
   --height 50 --width 50 -nc=5 -b 4096 --data-dir <dataset path> \
   -dn <dataset folder name>/ --output-tag <tag of output file name>`
+  
  `python examples/info_prequery.py --feature_path <log folder path for panel1/bestraw_features.pkl> \
   --feature_path2 <log folder path for panel2/bestraw_features.pkl> \
   --feature_path3 <log folder path for panel3/bestraw_features.pkl> \
   --saved_path <output folder path/bestraw_features.pkl> \
   --mode '3in1' \`
+  
   `python examples/post_query.py --door <your output filename at previous step>`
 
 ## Acknowledgments
