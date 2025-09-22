@@ -67,40 +67,31 @@ We recommend you set the file arc as below:
 
 ### Train
 
-To train the network, we need several args, here is the explanation:
+To train the network, we need several args. Here is the explanation:
 
 `-b: batch size`
-
 `-a: backbone network`
 `-dn: dataset folder name` 
-`-nc: number of the channles` 
-other parameters is better to keep the same, and change it as needed
+`-nc: number of the channels` 
+Other parameters are better to keep the same, but change them as needed.
 One example for training:
 `python VisQ-Search-Engine/examples/graph_train.py\
-  -b 256 -a unet -d brain -dn <folder name> -nc=5\
+  -b 256 -a unet -d brain -dn <dataset folder name> -nc=5\
   --iters 200 --momentum 0.2 --eps 0.6 --num-instances 16 --height 50 --width 50 --epochs 50 \
-  --logs-dir VisQ-Search-Engine/examples/logs/<log folder name>/ `
+  --logs-dir VisQ-Search-Engine/examples/logs/<log folder name>/`
 
 ### Query
+`python examples/RWM_testUnet.py \
+  -d brain -a unet --resume <your checkpoint(log) path/model_best.pth.tar> \
+  --height 50 --width 50 -nc=5 -b 4096 --data-dir <dataset path> \
+  -dn <dataset folder name>/ --output-tag <tag of output file name>`
+ `python examples/info_prequery.py --feature_path <log folder path for panel1/bestraw_features.pkl> \
+  --feature_path2 <log folder path for panel2/bestraw_features.pkl> \
+  --feature_path3 <log folder path for panel3/bestraw_features.pkl> \
+  --saved_path <output folder path/bestraw_features.pkl> \
+  --mode '3in1' \`
+  `python examples/post_query.py --door <your output filename at previous step>`
 
-Run the code in BooleanUser_lhuang.ipynb to see how to interact with your query and the output display with the machine learning model. Before that, you need to prepare the following files:
-
-* pretrained matrix: please find it in examples/logs/<data name, ex:UNet_CA_myelo >/feature_results.h5
-* distance rerank: please find it in examples/logs/<data name, ex:UNet_CA_myelo >/rerankingDist.npy
-* cosine feature: please find it in examples/logs/<data name, ex:UNet_CA_myelo >/feature_results_Cosine.h5
-* h5file: please find it in data/Select_RegionMasked_50.h5
-* prepared data crops from target whole brain image, include the mean_std.txt
-* Atlas data: please find it in data/Swanson_S1_Atlas_Fit_1.tif
-* click keys: please find it in brain/50Plex/S1/classification_table_master.csv
-* clicks(Alternatively, can manually selected, or save as a npy file) please find it in /examples/data/clicks/clicks_Swanson0.npy
-
-Calculate thresholding:
-<... update later>
-
-The red node is the search engine and the output is the similarity heatmap of the whole brain image. 
-<img src="examples/showcase/output11.png" width="400">
-
-Please see more examples with multi-clicks in the jupyter notebook file.
 ## Acknowledgments
 
 This work was supported by the National Institutes of health (NINDS) under grant
