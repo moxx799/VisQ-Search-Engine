@@ -8,8 +8,9 @@ A Visual Query-Driven Search Engine for Brain Tissue Image Analysis.
 
 ## Project description
 Our search engine is built for combining multiplex fluorescence image signals into a single feature space, which then constructs a community map to delineate the similar/different regions in the tissue.
+It includes two parts, the machine learning part and the GUI part.
 
-## How to use
+## Machine learning part
 
 ### Installation
 
@@ -103,7 +104,7 @@ One example for training:
  --outputCSV <ouput file name>\
  --panel <panel name>`
 
-### QuPath
+## QuPath GUI
 Follow the instructions in GUI_cookbook.docx
 
 ![Alt text](examples/showcase/figure1.jpg)
