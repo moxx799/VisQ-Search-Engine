@@ -1,12 +1,12 @@
 A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
+@copyright University of Houston, Electrical and Electronic Computer Engineering Department, Roysam Badri, Farsight group.
 
 # Paper
 
 [![Roysam-lab](https://avatars.githubusercontent.com/u/14843238?v=4)](https://https://github.com/RoysamLab)
 
 ## Project description
-
-- Our search engine is built for combining multiplex fluorescence image signals into a single feature space, which then constructs a community map to delineate the similar/different regions in the tissue.
+Our search engine is built for combining multiplex fluorescence image signals into a single feature space, which then constructs a community map to delineate the similar/different regions in the tissue.
 
 ## How to use
 
