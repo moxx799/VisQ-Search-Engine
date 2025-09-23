@@ -1,4 +1,5 @@
-A Visual Query-Driven Search Engine for Brain Tissue Image Analysis
+A Visual Query-Driven Search Engine for Brain Tissue Image Analysis.
+
 @copyright University of Houston, Electrical and Electronic Computer Engineering Department, Roysam Badri, Farsight group.
 
 # Paper
