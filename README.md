@@ -105,7 +105,7 @@ One example for training:
  --panel <panel name>`
 
 ## QuPath GUI
-Follow the instructions in GUI_cookbook.docx
+Follow the instructions in GUI_cookbook.docx, and find the extension in Release.
 
 ![Alt text](examples/showcase/figure1.jpg)
 
