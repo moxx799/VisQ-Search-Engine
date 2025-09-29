@@ -32,7 +32,7 @@ and then install the repository as a package.
 
 You need to train the entire dataset before using the query search engine. After training, the user can upload the output to QuPath and interactively explore the search engine.
 Thus, we provide the method for data preparation so that the training process can work on it.
-The data preparation is to crop the entire image into several [174,174,n] patches.
+The data preparation is to crop the entire image into several [175,175,n] patches.
 
 ![image info](examples/showcase/preparation.png)
 
@@ -45,7 +45,7 @@ Here is the method for preparing the dataset:
  --BIO_MARKERS_PANNEL <tag for the panel name, which is the key of the dict in examples/channel_lists>`
 
 Alternatively, there are several default variables that you can change as needed. Please check the code in the file.
-The input biomarker images are the entire brain images, and the output is the cropped [175,172,10] patches.
+The input biomarker images are the entire brain images, and the output is the cropped [175,175,n] patches.
 We recommend you set the file arc as below:
 
 `cluster-contrast-reid`
